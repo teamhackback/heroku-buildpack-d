@@ -40,7 +40,7 @@ export PATH="$CACHE_DIR/linker:$PATH"
 cd "$BUILD_DIR"
 echo "-----> Building application with dub"
 
-dub build -v -b release --compiler=$DC 2>&1 | indent
+dub build -b release --compiler=$DC 2>&1 | indent
 dub clean
 
 if [ ! -f Procfile ]; then
