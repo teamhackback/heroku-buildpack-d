@@ -50,7 +50,6 @@ if [ ! -f Procfile ]; then
     bin=$(dub describe --data=target-name --data-list)
     echo "web: .$path$bin --port \$PORT" | indent
     cat > Procfile <<-EOF
-    default_process_types:
       web: .$path$bin --port \$PORT
 EOF
 fi
