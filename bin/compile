@@ -18,7 +18,7 @@ indent() { sed 's|^|       |'; }
 CURL_USER_AGENT="Heroku Buildpack D $(curl --version | head -n 1)"
 curl() { command curl -fsSL --retry 3 -A "${CURL_USER_AGENT}" "$@"; }
 
-echo "-----> Building git commit $(git rev-parse HEAD): $(git log --format=%B -n 1 <)"
+echo "-----> Building git commit $(git rev-parse HEAD): $(git log --format=%B -n 1)"
 echo "-----> Using $compiler"
 activate_path="$(curl -fsS https://dlang.org/install.sh | SHELL=bash bash -s $compiler --path "$CACHE_DIR" --activate)"
 set +u
